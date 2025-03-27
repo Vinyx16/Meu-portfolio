@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="particulas"></div>
+    
+    <div class="arrumar-erro">
+
+<section class="caixa-menu">
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#titulo">Sobre Mim</a></li>
+                <li><a href="#tituloprojetos">Projetos</a></li>
+                <li><a href="#contatos">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+</section>
+
+    <div class="container">
+        <div class="texto">
+            <h1 id="inicio">Olá! Sou um <br> Desenvolvedor <span>Front-End</span></h1>
+            <div class="botoes">
+                <button class="btn btn-primario">Sobre mim</button>
+                <button class="btn btn-secundario">Contato</button>
+            </div>
+        </div>
+        <div class="perfil">
+            <img src="./img/Screenshot_20250327_115814_Instagram.jpg" alt="Foto de perfil">
+            <h2>Vinicius dos Santos</h2>
+            <p>Desenvolvedor Web</p>
+        </div>
+    </div>
+
+</div>
+
+<main>
+
+    <section id="titulo" class="sobre">
+        <div class="interface">
+            <h2 class="titulo">Sobre <span>Mim</span></h1>
+            <div class="flex">
+                <p class="psobremim">💻 Apaixonado por Tecnologia e Desenvolvimento Web
+
+                    Sou um entusiasta da tecnologia, em constante aprendizado e sempre buscando evoluir na área de desenvolvimento web. Com conhecimentos em HTML, CSS e JavaScript, já criei projetos como páginas de login, portfólios e interfaces responsivas. Acredito que um bom design e uma experiência fluida fazem toda a diferença no mundo digital.
+                    
+                    🚀 Minha missão é transformar ideias em código e aprimorar minhas habilidades a cada projeto. Estou sempre explorando novas tecnologias e desafios para crescer como desenvolvedor.
+                    
+                    Vamos construir algo incrível juntos?</p>
+            </div>
+        </div>
+    </section>
+
+<section id="tituloprojetos" class="projetos">
+        <h2 class="tituloprojetos">MEUS <span>PROJETOS</span></h2>
+            <div class="projetos-caixa">
+                
+                <div class="projetos-card">
+                    <img src="./img/Hamburgueria.png" alt="projeto 1" class="projetos-img">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Hamburgueria Web</h3>
+                    <p class="paragrafo-projetos">Site moderno e responsivo para uma hamburgueria, com um cardápio interativo e design atrativo.</p>
+                </div>
+
+                </div>
+
+                <div class="projetos-card">
+                    <img src="./img/paginalogin.png" alt="projeto 2" class="projetos-img">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Pagina de Login</h3>
+                    <p class="paragrafo-projetos">Tela de login simples e funcional, com campos para usuário e senha, design responsivo e validação de dados.</p>
+                </div>
+                </div>
+
+    </div>
+</section>
+
+</main>
+
+<section id="contatos" class="contatos">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="EnviarWhats(event)">
+        <div class="grupo-form">
+            <input placeholder="Nome" class="campo-form" id="nome">
+        </div>
+        
+        <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+
+        </div>
+
+    </form>
+</section>
+
+<script>
+
+function EnviarWhats(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem').value;
+    const telefone = '5561994438922';
+
+    const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+    window.open(url, '_blank')
+}
+
+</script>
+
+</body>
+</html>
